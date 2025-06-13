@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/huntercalc3/static/css/main.9254b861.css",
+    "main.js": "/huntercalc3/static/js/main.f9153a46.js",
+    "static/js/453.a6ca1c97.chunk.js": "/huntercalc3/static/js/453.a6ca1c97.chunk.js",
+    "index.html": "/huntercalc3/index.html",
+    "main.9254b861.css.map": "/huntercalc3/static/css/main.9254b861.css.map",
+    "main.f9153a46.js.map": "/huntercalc3/static/js/main.f9153a46.js.map",
+    "453.a6ca1c97.chunk.js.map": "/huntercalc3/static/js/453.a6ca1c97.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9254b861.css",
+    "static/js/main.f9153a46.js"
+  ]
+}
