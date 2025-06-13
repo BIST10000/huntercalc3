@@ -1,0 +1,345 @@
+/* Huntercalc.css */
+:root {
+    --primary: #bde420;
+    --primary-dark: #a6cc1c;
+    --primary-light: #e8f5d9;
+    --bg: #f7fbf2;
+    --card-bg: #ffffff;
+    --text: #2d2d2d;
+    --text-light: #666666;
+    --border: #e0e0e0;
+    --radius: 8px;
+    --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --transition: all 0.2s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.5;
+}
+
+.huntercalc {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.huntercalc h1 {
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    color: var(--text);
+}
+
+/* Form Block */
+.form-block {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.form-group select,
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group select:focus,
+.form-group input[type="number"]:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-light);
+}
+
+.form-block button {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--primary);
+    color: var(--text);
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.form-block button:hover {
+    background: var(--primary-dark);
+}
+
+/* Inventory Section */
+.inventory-section {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+.inventory-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.empty-message {
+    justify-self: center;
+}
+
+.clear-button,
+.calculate-button {
+    flex: 1;
+    padding: 0.75rem;
+    background: var(--primary-light);
+    color: var(--text);
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.clear-button:hover,
+.calculate-button:hover {
+    background: var(--primary);
+}
+
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.inventory-table th,
+.inventory-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+}
+
+.inventory-table th {
+    background: var(--primary-light);
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+.inventory-table td:last-child {
+    white-space: normal;
+}
+
+.inventory-table button {
+    padding: 0.5rem 1rem;
+    background: #ffebee;
+    color: #d32f2f;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.inventory-table button:hover {
+    background: #ffcdd2;
+}
+
+/* Results Block */
+.result-block {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.result-block h2 {
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.result-block p {
+    margin-bottom: 0.5rem;
+}
+
+.result-block span {
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+/* Popup Image */
+.popup-image {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    animation: fadeInOut 6s ease-in-out forwards;
+    display: block;
+    pointer-events: none;
+}
+
+.popup-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeInOut {
+    0% { 
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    5% { 
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    95% { 
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% { 
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+/* Dollar Signs Animation */
+@keyframes floatDollar {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.dollar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.dollar {
+    position: absolute;
+    color: var(--primary);
+    font-size: 2rem;
+    font-weight: bold;
+    animation: floatDollar 3s ease-in-out forwards;
+    text-shadow: 0 0 10px rgba(189, 228, 32, 0.3);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .huntercalc {
+        padding: 2rem;
+    }
+
+    .huntercalc h1 {
+        font-size: 2.25rem;
+    }
+
+    .form-block {
+        padding: 2rem;
+    }
+
+    .form-block {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        align-items: end;
+    }
+
+    .form-group {
+        margin-bottom: 0;
+    }
+
+    .form-block button {
+        grid-column: 1 / -1;
+        max-width: 300px;
+        margin-left: auto;
+    }
+
+    .inventory-section {
+        padding: 2rem;
+        overflow-x: visible;
+    }
+
+    .inventory-actions {
+        justify-content: flex-end;
+    }
+
+    .clear-button,
+    .calculate-button {
+        max-width: 200px;
+    }
+
+    .result-block {
+        padding: 2rem;
+    }
+
+    .popup-image img {
+        max-width: 300px;
+    }
+
+    .inventory-table {
+        min-width: auto;
+    }
+}
+
+@media (min-width: 1024px) {
+    .huntercalc {
+        padding: 3rem;
+    }
+
+    .form-block {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .form-block button {
+        grid-column: auto;
+    }
+}
